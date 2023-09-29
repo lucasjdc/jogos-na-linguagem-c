@@ -86,7 +86,6 @@ void move(char direcao){
 
 int main() {
 
-	
 	lemapa();
 	
 	do {
