@@ -5,11 +5,11 @@
 void andanomapa(MAPA* m, int xorigim, int yorigem, int xdestinho, int ydestino) {
 	char personagem = m->matriz[xorigim][yorigem];
 	m->matriz[xdestinho][ydestino] = personagem;
-	m->matriz[xorigim][yorigem] = '.';
+	m->matriz[xorigim][yorigem] = VAZIO;
 }
 
 int ehvazia(MAPA* m, int x, int y) {
-	return m->matriz[x][y] == '.';
+	return m->matriz[x][y] == VAZIO;
 }
 
 int ehvalida(MAPA* m, int x, int y) {
@@ -21,7 +21,7 @@ int ehvalida(MAPA* m, int x, int y) {
 	return 1;	
 }
 
-void encontramapa(MAPA* m, POSICAO* p,  char c){
+void encontramapa(MAPA* m, POSICAO* p, char c){
     // ache a posicao do foge foge
 	for(int i = 0; i < m->linhas; i++){
 		for(int j = 0; j < m->colunas; j++){

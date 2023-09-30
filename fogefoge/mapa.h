@@ -1,3 +1,6 @@
+#define HEROI '@'
+#define VAZIO '.'
+
 struct mapa {
     char** matriz;
     int linhas;
