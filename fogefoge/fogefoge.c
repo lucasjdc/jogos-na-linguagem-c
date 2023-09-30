@@ -11,8 +11,10 @@ int acabou(){
 }
 
 void move(char direcao){
-	int x;
-	int y;
+
+	// quando só tem uma instrução no if não e necessario usar {}
+	if (direcao != 'a' && direcao != 'w' && direcao != 's' && direcao != 'd')
+		return;
 	
 	m.matriz[heroi.x][heroi.y] = '.';
 
