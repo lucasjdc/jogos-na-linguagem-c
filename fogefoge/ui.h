@@ -1,0 +1,1 @@
+void imprimemapa(MAPA* m);

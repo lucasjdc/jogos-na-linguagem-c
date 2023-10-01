@@ -3,6 +3,7 @@
 #include <time.h>
 #include "fogefoge.h"
 #include "mapa.h"
+#include "ui.h"
 
 MAPA m;
 POSICAO heroi;
@@ -99,10 +100,15 @@ void move(char direcao){
 }
 
 void explodepilula(){
+
+	if(!tempilula) return;
+
 	explodepilula2(heroi.x, heroi.y, 0, 1, 3);
 	explodepilula2(heroi.x, heroi.y, 0, -1, 3);
 	explodepilula2(heroi.x, heroi.y, 0, 1, 3);
 	explodepilula2(heroi.x, heroi.y, -1, 0, 3);
+
+	tempilula = 0;
 }
 void explodepilula2(int x, int y, int somax, int somay, int qtd) {
 	
