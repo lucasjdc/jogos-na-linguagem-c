@@ -14,7 +14,7 @@ int praondefantasmavai(int xatual, int yatual, int*  xdestino, int* ydestino) {
 	for(int i = 0; i < 10; i++) {
 		int posicao = rand() % 4;
 
-		if(podeandar(&m, opcoes[posicao][0], opcoes[posicao][1])) {
+		if(podeandar(&m, FANTASMA, opcoes[posicao][0], opcoes[posicao][1])) {
 			*xdestino = opcoes[posicao][0];
 			*ydestino = opcoes[posicao][1];
 
@@ -31,7 +31,7 @@ void fantasmas(){
 	copiamapa(&copia, &m);
 
 	for(int i = 0; i < m.linhas; i++) {
-		for(int j = 0; j <  m.colunas; j++) {
+		for(int j = 0; j < m.colunas; j++) {
 			
 			if(copia.matriz[i][j] == FANTASMA) {
 
@@ -50,8 +50,8 @@ void fantasmas(){
 	liberamapa(&copia);
 }
 
-int acabou(){
-	POSICAO pos; // não faz nada é apenas para usar a função
+int acabou() {
+	POSICAO pos;
 	int fogefogenomapa = encontramapa(&m, &pos, HEROI);
 	return !fogefogenomapa;
 }
@@ -83,7 +83,7 @@ void move(char direcao){
 			break;
 	}
 
-	if(!podeandar(&m, proximox, proximoy))
+	if(!podeandar(&m, HEROI, proximox, proximoy))
 		return;
 
 	andanomapa(&m, heroi.x, heroi.y, proximox, proximoy);

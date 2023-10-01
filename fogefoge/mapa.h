@@ -1,6 +1,8 @@
 #define HEROI '@'
 #define FANTASMA 'F'
 #define VAZIO '.'
+#define PAREDE_VERTICAL '|'
+#define PAREDE_HORIZONTAL '-'
 
 struct mapa {
     char** matriz;
@@ -26,4 +28,6 @@ int ehvalida(MAPA* m, int x, int y);
 int ehvazia(MAPA* m, int x, int y);
 void andanomapa(MAPA* m, int xorigim, int yorigem, int xdestinho, int ydestino);
 void copiamapa(MAPA* destino, MAPA* origem);
-int podeandar(MAPA* m, int x, int y);
+int podeandar(MAPA* m, char personagem, int x, int y);
+int ehparede(MAPA* m, int x, int y);
+int ehpersonagem(MAPA* m, char personagem, int x, int y);
