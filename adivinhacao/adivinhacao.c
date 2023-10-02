@@ -9,8 +9,8 @@ int main() {
 	printf("******************************************\n");
     printf("* Bem vindo ao nosso jogo de adivinhação *\n");
     printf("******************************************\n");
-
-    int numerosecreto = 42;
+	
+	int numerosecreto = 42;
     int chute;
     
     for (int i = 1; i <= 3; i++) {
@@ -24,6 +24,7 @@ int main() {
         if (acertou) {
             printf("Parabéns! Você acertou!\n");
             printf("Jogue de novo, você é um bom jogador!\n");
+			break;
         } else {
 
             int maior = (chute > numerosecreto);
